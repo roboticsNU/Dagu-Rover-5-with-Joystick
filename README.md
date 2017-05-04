@@ -33,16 +33,24 @@ After it finishes, be sure to get the SD Card out from BBB, and only after that 
 
 2.	Connection of Dagu Rover with BBB
 To control the Dagu Rover you need to use the Dual Motor Driver. We are using the Pololu driver: https://www.pololu.com/product/2130.
- 
+
+![pololu chip](https://image.ibb.co/djmT35/polulu.png) 
+
 There are 4 input pins (blue) on the driver chip and 4 output pins (green) on the image above. The red ones are used for external power supply. The motors require maximum about 7.2V. So you have to connect such a battery to the GND and VIN pins of this chip. The input pins should be connected to BBB. Please follow the picture below for how to connect the input pins of Pololu with BBB:
- 
+
+![bbb pinout](https://image.ibb.co/kncqGQ/bbbpinout.png) 
+
 The red rectangle in the picture above goes to BIN1 and BIN2 of the Pololu driver chip. GPIO_69 goes to BIN1, GPIO_68 to BIN2 pin. AIN1 goes to GPIO_45 and AIN2 goes to GPIO_44. 
 After correct connection of those pins next step is to connect the output pins to the motors of the Dagu Rover. 
 Identify the motor wires of Dagu Rover, you can see them in the picture below in red rectangles:
  
+![Rover](https://image.ibb.co/fsseAk/dagu.png) 
+
 There are 4 motors there, so be sure to select two of them which are from different sides of the Dagu Rover, we are not using all 4 motors. Use the red wire of Dagu Motor to connect it with AOUT1 and the black one with AOUT2, do the same connection of the second motor wires with BOUT1 and BOUT2. 
 
 Now you have to connect the battery to the Pololu driver. To make it, we used the 7.2V batteries. You have to connect Battery ground to the GND of the Pololu driver Chip and the Voltage of battery goes to VIN pin of Pololu driver chip. In case if you have more powerful battery (higher than 7.2V), you can use voltage regulator to reduce the voltage to the desired level (less than or equal to 7.2V). You can use the following picture to use voltage regulator:
+
+![Voltage regulator](https://image.ibb.co/fuAXVk/vr.png) 
  
 It’s input should be connected with battery voltage, ground with battery ground and output should produce the needed voltage, which you connect with VIN of Pololu driver chip, and battery ground goes to GND of Pololu driver chip.
 
